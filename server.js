@@ -64,9 +64,9 @@ app.get('/api/companyinfo',require('./router/company_info.js'))
 app.post('/api/setcompany',require('./router/company_info.js'))
 app.put('/api/editcompany',require('./router/company_info.js'))
 /**if another routes are aquired than above routes goto client side */
-app.use(express.static(path.join(__dirname,'../client/build')));
+app.use(express.static(path.join(__dirname,'build')));
 app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname,'../client/build','index.html'))
+    res.sendFile(path.join(__dirname,'build','index.html'))
 })
 app.listen(port,()=>{
     console.log('port started in:'+port)
